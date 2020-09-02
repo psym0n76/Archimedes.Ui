@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-value',
-  templateUrl: './value.component.html'
+  templateUrl: './fetch-value-data.component.html'
 })
-export class ValueComponent {
+export class FetchValueDataComponent {
   public valueForecasts: ValueForecast[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
