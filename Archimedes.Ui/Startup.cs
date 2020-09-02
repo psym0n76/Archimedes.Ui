@@ -29,6 +29,16 @@ namespace Archimedes.Ui
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAny", x =>
+                {
+                    x.AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowAnyOrigin();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,12 +55,16 @@ namespace Archimedes.Ui
                 app.UseHsts();
             }
 
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
             }
+
+            app.UseCors("AllowAny");
 
             app.UseRouting();
 
