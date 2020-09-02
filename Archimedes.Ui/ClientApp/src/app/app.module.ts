@@ -27,8 +27,8 @@ import { ValueComponent } from './value/value.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent }
-      //{ path: 'value', component: ValueComponent }
+      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'values', component: ValueComponent }
     ])
   ],
   providers: [],
