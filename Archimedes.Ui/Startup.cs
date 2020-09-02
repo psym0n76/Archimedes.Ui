@@ -1,3 +1,4 @@
+using Archimedes.Library.Domain;
 using Archimedes.Ui.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +22,7 @@ namespace Archimedes.Ui
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.Configure<Config>(Configuration.GetSection("AppSettings"));
             services.AddSignalR();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

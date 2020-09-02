@@ -17,7 +17,6 @@ export class FetchValueDataComponent implements OnInit  {
 
 
   ngOnInit(): void {
-
     this.hubConnection = new HubConnectionBuilder().withUrl("https://localhost:44314/Hubs/Values").build();
     this.hubConnection
       .start()
