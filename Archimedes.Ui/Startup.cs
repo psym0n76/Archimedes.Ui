@@ -30,14 +30,15 @@ namespace Archimedes.Ui
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+                
 
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAny", x =>
                 {
-                    x.AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowAnyOrigin();
+                    x.WithOrigins("http://localhost:5103")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                 });
             });
         }
