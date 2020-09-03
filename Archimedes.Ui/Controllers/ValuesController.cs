@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace Archimedes.Ui.Controllers
 {
+    [Produces("application/json")]
     [Route("[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -26,10 +27,11 @@ namespace Archimedes.Ui.Controllers
         {
             if (Source.Any())
             {
-                return Source; 
+                return Ok(Source); 
             }
 
-            return Ok("No Data");
+            return Ok(new List<string>(){});
+            //return Ok( new List<string>(){"No Data"});
         }
 
         // GET api/values/5
