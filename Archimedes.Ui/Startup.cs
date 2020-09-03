@@ -36,7 +36,7 @@ namespace Archimedes.Ui
             {
                 options.AddPolicy("AllowAny", x =>
                 {
-                    x.WithOrigins("http://localhost:5103")
+                    x.WithOrigins("http://archimedes-ui.com:5103")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
