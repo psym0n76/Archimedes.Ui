@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   { path: 'fetch-data', component: FetchDataComponent },
   { path: 'fetch-value-data', component: FetchValueDataComponent }
 
-]
+];
 
 
 @NgModule({
@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     //   { path: 'counter', component: CounterComponent },
     //   { path: 'fetch-data', component: FetchDataComponent },
     //   { path: 'fetch-value-data', component: FetchValueDataComponent }
-    // ]) 
+    // ])
   ],
   providers: [ConfigurationService,
   {
