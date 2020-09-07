@@ -1,7 +1,6 @@
 using Archimedes.Library.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,19 +28,6 @@ namespace Archimedes.Ui
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-
-
-
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy("AllowAny", x =>
-            //    {
-            //        x.WithOrigins("http://archimedes-ui.com:5103","http://www.archimedes-ui.com:5103","http://localhost:5103")
-            //            .AllowAnyHeader()
-            //            .AllowAnyMethod()
-            //            .AllowCredentials();
-            //    });
-            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,8 +53,6 @@ namespace Archimedes.Ui
                 app.UseSpaStaticFiles();
             }
 
-            //app.UseCors("AllowAny");
-
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -76,9 +60,6 @@ namespace Archimedes.Ui
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
-
-
-
             });
 
 
