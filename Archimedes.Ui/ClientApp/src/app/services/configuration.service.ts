@@ -9,7 +9,7 @@ export class ConfigurationService {
   constructor(private http: HttpClient) { }
 
   loadConfig() {
-    return this.http.get<IServerConfiguration>('/configuration')
+    return this.http.get<IServerConfiguration>('http://archimedes-service-ui.com:2103/configuration')
       .toPromise()
       .then(result => {
         this.configuration = <IServerConfiguration>(result);

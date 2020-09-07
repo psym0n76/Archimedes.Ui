@@ -17,17 +17,19 @@ export class FetchValueDataComponent implements OnInit  {
     @Inject('BASE_URL') baseUrl: string,
     configuration: ConfigurationService)
   {
-    http.get<string[]>(baseUrl + 'values').subscribe(result => { this.valueForecasts = result; }, error => console.error(error));
+    http.get<string[]>('http://archimedes-service-ui.com:2103/values').subscribe(result => { this.valueForecasts = result; }, error => console.error(error));
 
     this.userInterfaceBaseUrl = configuration.userInterfaceBaseUrl;
   }
 
   ngOnInit(): void {
 
-    this.hubConnection = new HubConnectionBuilder().withUrl(`${this.userInterfaceBaseUrl}/Hubs/Values`).build();
+    console.log(this.userInterfaceBaseUrl);
+
+    this.hubConnection = new HubConnectionBuilder().withUrl('http://archimedes-service-ui.com:2103/Hubs/Values').build();
     this.hubConnection
       .start()
-      .then(() => console.log('Connection started..' + this.userInterfaceBaseUrl + '/Hubs/Values'))
+      .then(() => console.log('Connection started..http://archimedes-service-ui.com:2103/Hubs/Values'))
       .catch(err => console.log('Error while establishing connection : ('));
 
     this.hubConnection.on('Add',
