@@ -33,16 +33,16 @@ namespace Archimedes.Ui
 
 
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAny", x =>
-                {
-                    x.WithOrigins("http://archimedes-ui.com:5103","http://www.archimedes-ui.com:5103","http://localhost:5103")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials();
-                });
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("AllowAny", x =>
+            //    {
+            //        x.WithOrigins("http://archimedes-ui.com:5103","http://www.archimedes-ui.com:5103","http://localhost:5103")
+            //            .AllowAnyHeader()
+            //            .AllowAnyMethod()
+            //            .AllowCredentials();
+            //    });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +68,7 @@ namespace Archimedes.Ui
                 app.UseSpaStaticFiles();
             }
 
-            app.UseCors("AllowAny");
+            //app.UseCors("AllowAny");
 
             app.UseRouting();
 
